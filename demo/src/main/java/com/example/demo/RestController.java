@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
-@RequestMapping("api/v1/cities")
+@RequestMapping("/")
 public class RestController {
     private static final List<Country> COUNTRIES = List.of(
             new Country("United States of America", "Washington D.C.", 339_996_563),
@@ -16,7 +16,7 @@ public class RestController {
     @GetMapping("/")
     public String root() { return "OK"; }
 
-    @GetMapping
+    @GetMapping("api/v1/cities")
     public List<Country> getCountries(){
         return COUNTRIES;
     }
