@@ -1,11 +1,10 @@
 package com.example.demo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@org.springframework.web.bind.annotation.RestController
 @RequestMapping("api/v1/cities")
 public class RestController {
     private static final List<Country> COUNTRIES = List.of(
@@ -13,6 +12,9 @@ public class RestController {
             new Country("China", "Beijing", 1_411_750_000),
             new Country("India", "New Delhi", 1_428_627_663)
     );
+
+    @GetMapping("/")
+    public String root() { return "OK"; }
 
     @GetMapping
     public List<Country> getCountries(){
