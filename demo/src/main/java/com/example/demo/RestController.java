@@ -7,7 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/cities")
-public class RestEndpoint {
+public class RestController {
     private static final List<Country> COUNTRIES = List.of(
             new Country("United States of America", "Washington D.C.", 339_996_563),
             new Country("China", "Beijing", 1_411_750_000),
